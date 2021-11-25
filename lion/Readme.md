@@ -19,12 +19,12 @@
 	$ ansible-playbook -i hosts PlayBook1.yml
 
 # References
--- https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installation-guide
--- https://docs.ansible.com/ansible/latest/user_guide/index.html
--- https://www.youtube.com/watch?v=Z01b9QZG0D0
--- https://medium.com/tensult/setting-up-a-mac-using-ansible-3dcf63c1d324
--- https://github.com/geerlingguy/mac-dev-playbook
--- https://www.youtube.com/watch?v=BeYUQaFS-vg
+- https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installation-guide
+- https://docs.ansible.com/ansible/latest/user_guide/index.html
+- https://www.youtube.com/watch?v=Z01b9QZG0D0
+- https://medium.com/tensult/setting-up-a-mac-using-ansible-3dcf63c1d324
+- https://github.com/geerlingguy/mac-dev-playbook
+- https://www.youtube.com/watch?v=BeYUQaFS-vg
 
 ## YAML Validation
--- http://www.yamllint.com/
+- http://www.yamllint.com/
