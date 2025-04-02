@@ -15,31 +15,19 @@
             - docker.io
             #- postgresql postgresql-contrib
 
-      - name: Install Jenkins
-        apt_key: 
-          url: https://pkg.jenkins.io/debian-stable/jenkins.io.key 
-          state: present
+      - name: Add Jenkins GPG key
+        shell: |
+          curl -fsSL https://pkg.jenkins.io/debian/jenkins.io-2023.key | tee /usr/share/keyrings/jenkins-keyring.asc > /dev/null
         become: yes
 
-      - name: Configure jenkins repo
-        apt_repository: 
-          repo: 'deb https://pkg.jenkins.io/debian-stable binary/' 
-          state: present
+      - name: Add Jenkins repository
+        shell: |
+          echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/" | tee /etc/apt/sources.list.d/jenkins.list > /dev/null
         become: yes
 
-      - name: Update Jenkins/Ensure it is installed
-        apt: 
-          name: jenkins 
+      - name: Update APT and Install Jenkins
+        apt:
           update_cache: yes
-        become: yes
-
-      - name: Install jenkins server
-        apt: 
-          name: jenkins 
+          name: jenkins
           state: present
         become: yes
-
-      - name: Start Jenkins
-        service: 
-          name: jenkins 
-          state: started
