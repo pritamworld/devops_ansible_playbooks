@@ -1,6 +1,6 @@
 # Sample Ansible Playbook1.yml
 - 
-    hosts: all #localhost
+    hosts: localhost
     connection: local # remove if you are using localhost without hosts file
     name: Play 1
     tasks:
