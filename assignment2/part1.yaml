@@ -39,7 +39,7 @@
     - name: Add Jenkins APT repository
       ansible.builtin.copy:
         dest: /etc/apt/sources.list.d/jenkins.list
-        content: "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] {{ jenkins_repo }}"
+        content: "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] {{ jenkins_repo }}\n"
         mode: '0644'
 
     - name: Update APT cache after adding Jenkins repo
