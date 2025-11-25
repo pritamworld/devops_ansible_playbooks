@@ -1,6 +1,6 @@
 ---
 - name: Install Java 21, Jenkins, Docker, Git, Node.js and Python on Azure VM
-  hosts: all #azure_vms          # <-- match this to your inventory group
+  hosts: localhost #azure_vms          # <-- match this to your inventory group
   become: yes
 
   vars:
