@@ -1,0 +1,13 @@
+---
+# Packages to install via apt
+base_packages:
+  - openjdk-17-jdk
+  - docker.io
+  # - postgresql
+  # - postgresql-contrib
+
+# Jenkins repo / key vars
+jenkins_key_url: https://pkg.jenkins.io/debian/jenkins.io-2023.key
+jenkins_keyring_path: /etc/apt/keyrings/jenkins-keyring.asc
+jenkins_repo_url: https://pkg.jenkins.io/debian-stable
+jenkins_repo_file: /etc/apt/sources.list.d/jenkins.list

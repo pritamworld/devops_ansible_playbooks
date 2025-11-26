@@ -1,0 +1,36 @@
+---
+# Install base packages
+- name: Install base packages
+  ansible.builtin.apt:
+    name: "{{ base_packages }}"
+    state: present
+    update_cache: yes
+
+# Jenkins GPG key + repo
+
+- name: Ensure keyrings directory exists
+  ansible.builtin.file:
+    path: "{{ jenkins_keyring_path | dirname }}"
+    state: directory
+    mode: '0755'
+
+- name: Download Jenkins GPG key
+  ansible.builtin.get_url:
+    url: "{{ jenkins_key_url }}"
+    dest: "{{ jenkins_keyring_path }}"
+    mode: '0644'
+
+- name: Configure Jenkins APT repository
+  ansible.builtin.template:
+    src: jenkins.list.j2
+    dest: "{{ jenkins_repo_file }}"
+    mode: '0644'
+
+- name: Update APT cache after adding Jenkins repo
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: Install Jenkins
+  ansible.builtin.apt:
+    name: jenkins
+    state: present
