@@ -11,7 +11,7 @@
 
 ## Step 2: Run sample PlayBook1.yml
 	//Download PlayBook1.yml
-	$ sudo wget https://devops-f2021.s3.amazonaws.com/PlayBook1.yml
+	$ git clone https://github.com/pritamworld/devops_ansible_playbooks.git
 	$ sudo ansible-playbook PlayBook1.yml
 
 	Take a screenshot and name file as PlayBook1.jpg
