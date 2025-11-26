@@ -3,7 +3,6 @@
   hosts: localhost #azure_vms          # <-- match this to your inventory group
   become: yes               # sudo for all tasks
   become_method: sudo
-  become_user: root
 
   vars:
     jenkins_repo_key_url: https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
