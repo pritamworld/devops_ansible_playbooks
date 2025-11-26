@@ -11,6 +11,7 @@
 
   tasks:
     - name: Update APT cache
+      become: yes
       ansible.builtin.apt:
         update_cache: yes
         cache_valid_time: 3600
@@ -39,6 +40,7 @@
         mode: '0644'
 
     - name: Update APT cache after adding Jenkins repo
+      become: yes
       ansible.builtin.apt:
         update_cache: yes
 
@@ -80,6 +82,7 @@
           deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu {{ ansible_lsb.codename }} stable
 
     - name: Update APT cache after adding Docker repo
+      become: yes
       ansible.builtin.apt:
         update_cache: yes
 
