@@ -24,12 +24,6 @@
     #################################################################
     # Jenkins
     #################################################################
-    - name: Install Java 17 as Jenkins dependency (if needed)
-      ansible.builtin.apt:
-        name: openjdk-17-jdk
-        state: present
-      when: ansible_distribution == "Ubuntu"
-
     - name: Add Jenkins repository GPG key
       ansible.builtin.get_url:
         url: "{{ jenkins_repo_key_url }}"
